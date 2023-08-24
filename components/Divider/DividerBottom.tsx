@@ -1,5 +1,14 @@
-const DividerBottom = () => {
-    return (
+
+import React from 'react';
+
+interface DividerProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+}
+
+const DividerBottom: React.FC<DividerProps> = ({ className, ...props }) => {
+  const combinedClassName = `absolute -bottom-[1px] fill-white w-[800px] md:w-[1200px] xl:w-full h-[30px] md:h-[50px] xl:[70px] ${className || ''}`;
+
+  return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -12,7 +21,8 @@ const DividerBottom = () => {
         viewBox="0 0 2186.6 44.2"
         xmlSpace="preserve"
         preserveAspectRatio="none"
-        className="absolute -bottom-[1px] fill-white w-[800px] md:w-[1200px]  xl:w-full h-[30px] md:h-[50px] xl:[70px]"
+        className={combinedClassName}
+        {...props}
       >
   
         <polygon

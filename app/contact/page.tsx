@@ -29,7 +29,7 @@ export default async function Home() {
 
   return (
     <main className="lg:fixed lg:inset-0 lg:flex lg:items-center lg:justify-center">
-      <div className="mx-7 py-12 max-w-[700px] lg:m-0 lg:pr-32 lg:box-border">
+      <div className="mx-7 py-24 max-w-[700px] lg:m-0 lg:pr-32 lg:box-border">
         <div>
           <div className="uppercase tracking-widest text-sm mb-12 xl:mb-20">
             {contactPage.kicker}

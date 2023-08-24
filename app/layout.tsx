@@ -8,6 +8,7 @@ import { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import { renderMetaTags } from 'react-datocms/seo';
 import { graphql } from '@/gql';
+import Footer from '@/components/Footer';
 
 const query = graphql(/* GraphQL */ `
   query Layout {
@@ -62,10 +63,10 @@ export default async function RootLayout({
   const { theme, site, contactPage } = await request(query);
 
   return (
-    <html lang="en">
+    <html lang="en" >
       {renderMetaTags(site.faviconMetaTags)}
       <body
-        className={`${playfairDisplay.variable} ${poppins.variable} font-sans  text-gray`}
+        className={`${playfairDisplay.variable} ${poppins.variable} font-sans mx-4 md:mx-10 text-black overflow-x-hidden relative`}
         style={
           theme
             ? ({
@@ -75,8 +76,11 @@ export default async function RootLayout({
             : undefined
         }
       >
-        <NavigationMenu phoneNumber={contactPage?.phoneNumber} />
-        {children}
+        <div className='w-full '>
+          <NavigationMenu phoneNumber={contactPage?.phoneNumber} />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

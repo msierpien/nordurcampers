@@ -24,6 +24,10 @@ module.exports = {
       secondary: '#16695f',
     },
     extend: {
+      backgroundImage: {
+        'tree-1': "url('/tree01.png')",
+        'tree-2': "url('/tree02.png')",
+      },
       fontFamily: {
         sans: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--font-playfair-display)', ...defaultTheme.fontFamily.serif],
