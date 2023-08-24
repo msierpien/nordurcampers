@@ -39,12 +39,12 @@ export function NavigationMenu({ phoneNumber }: {
 }) {
   const pathname = usePathname()
   return (
-    <div className='sticky w-full top-0 z-50 flex justify-center  bg-white/90 backdrop-blur-sm md:bg-transparent'>
+    <div className='sticky w-full top-0 z-50 flex justify-center  bg-white/90 backdrop-blur-sm md:backdrop-blur-0 md:bg-transparent'>
       <div className='container relative flex flex-row justify-between items-baseline p-2 w-full my-1 md:my-2  rounded-b-3xl'>
         <div>
           <MenuItem href='/'>Logo</MenuItem>
         </div>
-        <div className=" md:flex flex-row hidden text-black md:flex-row md:border bg-white/70 backdrop-blur-sm border-black rounded-full shadow-2xl">
+        <div className=" md:flex flex-row hidden text-black md:flex-row md:border bg-white/70 backdrop-blur-sm  border-black rounded-full shadow-2xl">
           {menuItems.map((item, index) => (
             <MenuItem key={index} href={item.href}>
               {item.label}
