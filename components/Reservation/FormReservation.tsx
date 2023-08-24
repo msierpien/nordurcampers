@@ -58,7 +58,8 @@ function ReservationForm() {
                                         selected={field.value}
                                         onChange={date => field.onChange(date)}
                                         placeholderText="Wybierz datę zakończenia"
-                                        className='bg-secondary text-white placeholder:text-white rounded-xl p-2 w-[250px]'
+                                        
+                                        className='bg-secondary text-white placeholder:text-white rounded-xl p-2 w-[250px] z-20'
                                     />
                                 </div>
                             )}
