@@ -20,6 +20,8 @@ module.exports = {
       stone: colors.stone,
       gray: colors.stone['600'],
       black: colors.stone['900'],
+      prmary: '#d85f56',
+      secondary: '#16695f',
     },
     extend: {
       fontFamily: {

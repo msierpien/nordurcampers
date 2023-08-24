@@ -3,13 +3,16 @@ import { Image as ReactDatocmsImage, type ImagePropTypes } from 'react-datocms';
 
 const DatoImage_responsiveImage = graphql(/* GraphQL */ `
   fragment DatoImage_responsiveImage on ResponsiveImage {
-    src
     srcSet
-    base64
+    webpSrcSet
+    sizes
+    src
     width
     height
+    aspectRatio
     alt
     title
+    base64
   }
 `);
 

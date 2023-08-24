@@ -12,6 +12,21 @@ export default graphql(/* GraphQL */ `
       tagline {
         value
       }
+      heroText
+      hero {
+        responsiveImage(imgixParams: {fit: crop, w: 2048, h: 1152, auto: format}) {
+          srcSet
+          webpSrcSet
+          sizes
+          src
+          width
+          height
+          aspectRatio
+          alt
+          title
+          base64
+        }
+      }
       description {
         value
       }

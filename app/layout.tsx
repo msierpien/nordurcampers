@@ -65,7 +65,7 @@ export default async function RootLayout({
     <html lang="en">
       {renderMetaTags(site.faviconMetaTags)}
       <body
-        className={`${playfairDisplay.variable} ${poppins.variable} font-sans overflow-x-hidden text-gray`}
+        className={`${playfairDisplay.variable} ${poppins.variable} font-sans  text-gray`}
         style={
           theme
             ? ({
