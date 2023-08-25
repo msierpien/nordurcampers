@@ -1,17 +1,14 @@
 'use client'
-import { useState } from 'react';
 import { Menu } from '@headlessui/react';
-import { generateWhatsAppLink } from '@/lib/whatsapp';
 import Link from 'next/link';
 import { ActiveLink } from './ActiveLink';
-import { WhatsappIcon } from './WhatsappIcon';
 import { usePathname } from 'next/navigation';
+import Language from './Language';
 
 const menuItems = [
   { href: '/', label: 'Go' },
   { href: '/about', label: 'Wyposażenie' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/islandia', label: 'O Islandii' },
   { href: '/contact', label: 'Kontakt' },
 
 ];
@@ -51,14 +48,13 @@ export function NavigationMenu({ phoneNumber }: {
             </MenuItem>
           ))}
         </div>
-        <div className='flex justify-between'>
-          <Link className='bg-prmary p-2 text-sm md:p-2 px-2  md:px-6  text-white rounded-full shadow-xl' href='/rezerwacja' >Rezerwacja</Link>
-          <Menu as="div" className=" inline-block text-left">
-            <div>
-              <Menu.Button className="bg-secondary p-2 ml-2 text-sm md:p-2 px-2  md:px-6 text-white rounded-full shadow-xl md:hidden">
+        <div className='flex justify-between items-baseline'>
+          <Link className='bg-prmary p-2 text-sm pl-6  border-y border-r border-black  text-white rounded-l-full  shadow-xl' href='/rezerwacja' >Rezerwacja</Link>
+          <Language />
+          <Menu as="div" className=" block">
+              <Menu.Button className="bg-secondary p-2 text-sm md:p-2 px-2 rounded-r-full border-y border-r border-black pr-4 text-white  shadow-xl md:hidden">
                 Menu
               </Menu.Button>
-            </div>
             <Menu.Items className="absolute top-16 left-1/2 mt-2 -translate-x-2/4 bg-white rounded-xl shadow-xl focus:outline-none w-[50vw] ">
               <div className="p-1 py-3 flex flex-col items-center">
                 {menuItems.map((item, index) => (
@@ -77,6 +73,7 @@ export function NavigationMenu({ phoneNumber }: {
             </Menu.Items>
 
           </Menu>
+       
         </div>
       </div>
     </div>

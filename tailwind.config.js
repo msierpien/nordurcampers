@@ -25,8 +25,10 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'tree-1': "url('/tree01.png')",
-        'tree-2': "url('/tree02.png')",
+        'tree-1': "url('/images/tree01.png')",
+        'tree-2': "url('/images/tree02.png')",
+        'england': "url('/images/england.png')",
+        'poland': "url('/images/poland.png')",
       },
       fontFamily: {
         sans: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
