@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return toNextMetadata(contactPage?._seoMetaTags || [])
 }
 
-export default async function Home() {
+export default async function Contact() {
   const { contactPage } = await request(query);
 
   if (!contactPage) {
@@ -28,7 +28,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="lg:fixed lg:inset-0 lg:flex lg:items-center lg:justify-center">
+    <main className=" lg:inset-0 lg:flex lg:items-center lg:justify-center">
       <div className="mx-7 py-24 max-w-[700px] lg:m-0 lg:pr-32 lg:box-border">
         <div>
           <div className="uppercase tracking-widest text-sm mb-12 xl:mb-20">
