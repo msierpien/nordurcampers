@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 
+interface LanguageItem {
+    name: string;
+    code: string;
+    iconClass: string;
+}
+
 const lang = [
     { name: 'English', code: 'en', iconClass: 'bg-england' },
     { name: 'Polish', code: 'pl', iconClass: 'bg-poland' },
 ];
 
-const Language = () => {
+
+const Language: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedLang, setSelectedLang] = useState(lang[0]);
 
@@ -14,7 +21,7 @@ const Language = () => {
         setIsOpen(!isOpen);
     };
 
-    const selectLanguage = (language) => {
+    const selectLanguage = (language: LanguageItem) => {
         setSelectedLang(language);
         setIsOpen(false);
         // Tutaj można dodać logikę do zmiany języka w aplikacji
