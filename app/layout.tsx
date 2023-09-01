@@ -1,6 +1,7 @@
 import './globals.css';
 import { Playfair_Display, Poppins } from 'next/font/google';
 import { ActiveLink } from '@/components/ActiveLink';
+import { Analytics } from '@vercel/analytics/react';
 import { WhatsappIcon } from '@/components/WhatsappIcon';
 import { NavigationMenu } from '@/components/NavigationMenu';
 import { request } from '@/lib/dato';
@@ -80,7 +81,7 @@ export default async function RootLayout({
           <NavigationMenu phoneNumber={contactPage?.phoneNumber} />
           {children}
           <Footer />
-     
+          <Analytics />
 
           </div>
       </body>
