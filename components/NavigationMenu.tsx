@@ -36,7 +36,7 @@ export function NavigationMenu({ phoneNumber }: {
 }) {
   const pathname = usePathname()
   return (
-    <div className='fixed w-full top-0 z-50 flex justify-center  bg-white/90 backdrop-blur-sm md:backdrop-blur-0 md:bg-transparent'>
+    <div className='sticky left-0 w-full top-0 z-50 flex justify-center  bg-white/90 backdrop-blur-sm md:backdrop-blur-0 md:bg-transparent'>
       <div className='container relative flex flex-row justify-between items-baseline p-2 w-full my-1 md:my-2  rounded-b-3xl'>
         <div>
           <MenuItem href='/'>Logo</MenuItem>

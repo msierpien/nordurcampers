@@ -42,12 +42,12 @@ export default async function Home() {
 
 
   return (
-    <main className='flex flex-col relative '>
+    <main className='flex flex-col relative container items-center overflow-x-hidden '>
       {/* {renderMetaTags(homepage?._seoMetaTags || [])} */}
       {homepage && (
         <>
-          <section className='relative max-h-screen w-auto rounded-t-3xl overflow-hidden'>
-            <div className=''>
+          <section className=' max-h-screen relative overflow-hidden rounded-t-3xl  w-full'>
+            <div className='relative'>
               <DatoImage
                 pictureClassName="xl:w-auto xl:h-auto "
                 layout="responsive"
@@ -56,16 +56,16 @@ export default async function Home() {
               />
 
             </div>
-            <DividerBottom className='fill-white' />
+            <DividerBottom className='fill-white  max-h-[30px] translate-x-10' />
           </section>
 
           <section className='w-full'>
-            <div className='overflow-hidden relative'>
+            <div className='overflow-x-hidden relative'>
               <Reservation />
             </div>
           </section>
 
-          <section className='bg-stone-200 pt-32  p-4 md:p-10 relative overflow-hidden' >
+          <section className='bg-stone-200 pt-32  p-4 md:p-10 relative overflow-hidden w-foll' >
             <div className='overflow-hidden'>
               <DividerBottom className='fill-white top-0 rotate-180' />
               <Treeheading title='CAMP' className='top-5 ' />
@@ -88,7 +88,7 @@ export default async function Home() {
           </section>
 
           <section className=' bg-blue relative pb-16 md:pb-32 w-full '>
-            <div className='container  px-4 pb-6 overflow-hidden'>
+            <div className='container  px-4 pb-6 overflow-x-hidden '>
               <div className='relative text-center w-full uppercase my-10 md:my-24  p-2 '>
                 <Treeheading title='Zdjęcia wnętrza' className='top-0 text-stone-200 text-md' />
               </div>

@@ -67,7 +67,7 @@ export default async function RootLayout({
     <html lang="pl" >
       {renderMetaTags(site.faviconMetaTags)}
       <body
-        className={`${playfairDisplay.variable} ${poppins.variable} font-sans flex flex-col items-center`}
+        className={`${playfairDisplay.variable} ${poppins.variable} font-sans flex flex-col items-center `}
         style={
           theme
             ? ({
@@ -77,7 +77,7 @@ export default async function RootLayout({
             : undefined
         }
       >
-          <div className='container overflow-y-scroll '>
+          <div className='container relative'>
           <NavigationMenu phoneNumber={contactPage?.phoneNumber} />
           {children}
           <Footer />
