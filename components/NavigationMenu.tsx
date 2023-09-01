@@ -36,7 +36,7 @@ export function NavigationMenu({ phoneNumber }: {
 }) {
   const pathname = usePathname()
   return (
-    <div className='sticky w-full top-0 z-50 flex justify-center  bg-white/90 backdrop-blur-sm md:backdrop-blur-0 md:bg-transparent'>
+    <div className='fixed w-full top-0 z-50 flex justify-center  bg-white/90 backdrop-blur-sm md:backdrop-blur-0 md:bg-transparent'>
       <div className='container relative flex flex-row justify-between items-baseline p-2 w-full my-1 md:my-2  rounded-b-3xl'>
         <div>
           <MenuItem href='/'>Logo</MenuItem>
@@ -49,7 +49,7 @@ export function NavigationMenu({ phoneNumber }: {
           ))}
         </div>
         <div className='flex justify-between items-baseline'>
-          <Link className='bg-prmary p-2 text-sm pl-6  border-y border-r border-black  text-white rounded-l-full  shadow-xl' href='/rezerwacja' >Rezerwacja</Link>
+          <Link className='bg-primary p-2 text-sm pl-6  border-y border-r border-black  text-white rounded-l-full  shadow-xl' href='/rezerwacja' >Rezerwacja</Link>
           <Language />
           <Menu as="div" className=" block">
               <Menu.Button className="bg-secondary p-2 text-sm md:p-2 px-2 rounded-r-full border-y border-r border-black pr-4 text-white  shadow-xl md:hidden">

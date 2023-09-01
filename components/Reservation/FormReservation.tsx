@@ -66,7 +66,7 @@ function ReservationForm() {
                         />
                     </div>
                 </div>
-                <button className="self-center w-full bg-prmary rounded-full p-2 text-white px-10 mt-4 shadow-xl" type="submit">Sprawdź</button>
+                <button className="self-center w-full bg-primary rounded-full p-2 text-white px-10 mt-4 shadow-xl" type="submit">Sprawdź</button>
             </form>
         </div>
     );

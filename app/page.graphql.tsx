@@ -30,11 +30,17 @@ export default graphql(/* GraphQL */ `
       description {
         value
       }
-    
+      insideGalery
+      opisIslandia {
+        value
+        }
+      icelandTitle
     }
+     
 
     photoshoots: allPhotoshoots(orderBy: position_ASC) {
       id
+      vertical
       ...Photoshoot_photoshoot
     }
 

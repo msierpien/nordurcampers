@@ -6,7 +6,7 @@ interface DividerProps extends React.SVGProps<SVGSVGElement> {
 }
 
 const DividerBottom: React.FC<DividerProps> = ({ className, ...props }) => {
-  const combinedClassName = `absolute -bottom-[1px] fill-white w-[800px] md:w-[1200px] xl:w-full h-[30px] md:h-[50px] xl:[70px] ${className || ''}`;
+  const combinedClassName = `absolute -bottom-[1px]  w-[800px] md:w-[1200px] xl:w-full h-[30px] md:h-[50px] xl:[70px] ${className || ''}`;
 
   return (
       <svg

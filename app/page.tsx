@@ -1,5 +1,4 @@
 import { HorizontalScroller } from '@/components/HorizontalScroller';
-import { Tile } from '@/components/Tile';
 import { UnwrapStructuredText } from '@/components/UnwrapStructuredText';
 import { Photoshoot } from '@/components/Photoshoot';
 import { request } from '@/lib/dato';
@@ -43,17 +42,12 @@ export default async function Home() {
 
 
   return (
-    <main style={{ counterReset: 'photoshoot-counter' }}>
+    <main className='flex flex-col relative '>
       {/* {renderMetaTags(homepage?._seoMetaTags || [])} */}
-
       {homepage && (
-
-
-        <div className="">
-          <div className='flex flex-col rounded-t-3xl overflow-hidden  '>
-            <div className='relative max-h-screen w-auto overflow-hidden'>
-
-
+        <>
+          <section className='relative max-h-screen w-auto rounded-t-3xl overflow-hidden'>
+            <div className=''>
               <DatoImage
                 pictureClassName="xl:w-auto xl:h-auto "
                 layout="responsive"
@@ -61,15 +55,20 @@ export default async function Home() {
                 fragment={homepage.hero?.responsiveImage || undefined}
               />
 
-              <DividerBottom />
             </div>
-            <div >
+            <DividerBottom className='fill-white' />
+          </section>
+
+          <section className='w-full'>
+            <div className='overflow-hidden relative'>
               <Reservation />
             </div>
+          </section>
 
-            <div className='bg-stone-200  relative pt-32 p-4 md:p-10'>
-              <Treeheading title='CAMP' />
+          <section className='bg-stone-200 pt-32  p-4 md:p-10 relative overflow-hidden' >
+            <div className='overflow-hidden'>
               <DividerBottom className='fill-white top-0 rotate-180' />
+              <Treeheading title='CAMP' className='top-5 ' />
               <div className="uppercase tracking-widest text-sm mb-12 xl:mb-20">
                 {homepage.title}
               </div>
@@ -78,25 +77,52 @@ export default async function Home() {
                   data={homepage.tagline.value as StructuredTextDocument}
                 />
               </h1>
-              <div className="leading-loose prose max-w-none">
+              <div className="leading-loose prose max-w-none text-base md:text-xl">
                 <StructuredText
                   data={homepage.description.value as StructuredTextDocument}
                 />
               </div>
-              <DividerBottom className='fill-white max-h-[30px] -translate-x-10' />
+              <DividerBottom className='fill-blue max-h-[30px] -translate-x-10' />
+
             </div>
-            <section className='mt-16'>
+          </section>
+
+          <section className=' bg-blue relative pb-16 md:pb-32 w-full '>
+            <div className='container  px-4 pb-6 overflow-hidden'>
+              <div className='relative text-center w-full uppercase my-10 md:my-24  p-2 '>
+                <Treeheading title='Zdjęcia wnętrza' className='top-0 text-stone-200 text-md' />
+              </div>
               <HorizontalScroller>
                 {photoshoots.map((photoshoot) => (
-                  <div key={photoshoot.id} className=''>
+                  <div key={photoshoot.id} className={!photoshoot.vertical ? 'col-span-2' : ''}>
                     <Photoshoot photoshoot={photoshoot} />
                   </div>
                 ))}
               </HorizontalScroller>
-            </section>
 
-          </div>
-        </div>
+              <div className='absolute top-0  -translate-x-1/2 left-1/2  bg-blue w-screen h-full -z-10' />
+              <DividerBottom className='fill-white  bottom-0   max-h-[50px] -translate-x-16' />
+            </div>
+
+          </section>
+          <section>
+            <div className='container  px-4 pb-6 overflow-hidden'>
+              {/* blogpost  */}
+              <div className='relative text-center w-full my-10 md:my-24  p-2 '>
+                <Treeheading title='Islandia ' className='top-0 text-stone-800 ' />
+                <div className='container  mt-10'>
+                  <div className="leading-loose prose max-w-none text-justify py-10 text-base md:text-xl">
+                    <StructuredText
+                      data={homepage.opisIslandia?.value as StructuredTextDocument}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </>
+
 
       )}
     </main>

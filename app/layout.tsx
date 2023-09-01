@@ -63,10 +63,10 @@ export default async function RootLayout({
   const { theme, site, contactPage } = await request(query);
 
   return (
-    <html lang="en" >
+    <html lang="pl" >
       {renderMetaTags(site.faviconMetaTags)}
       <body
-        className={`${playfairDisplay.variable} ${poppins.variable} font-sans mx-4 md:mx-10 text-black overflow-x-hidden relative`}
+        className={`${playfairDisplay.variable} ${poppins.variable} font-sans flex flex-col items-center`}
         style={
           theme
             ? ({
@@ -76,11 +76,13 @@ export default async function RootLayout({
             : undefined
         }
       >
-        <div className='w-full '>
+          <div className='container overflow-y-scroll '>
           <NavigationMenu phoneNumber={contactPage?.phoneNumber} />
           {children}
           <Footer />
-        </div>
+     
+
+          </div>
       </body>
     </html>
   );

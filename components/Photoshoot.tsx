@@ -1,5 +1,7 @@
 import DatoImage from '@/components/DatoImage';
 import { FragmentType, graphql, getFragmentData } from '@/gql';
+import DividerBottom from './Divider/DividerBottom';
+import Treeheading from './TreeHeading';
 
 
 const Photoshoot_photoshoot = graphql(/* GraphQL */ `
@@ -16,19 +18,19 @@ const Photoshoot_photoshoot = graphql(/* GraphQL */ `
 
 type Props = {
   photoshoot: FragmentType<typeof Photoshoot_photoshoot>,
-
 }
 
 export function Photoshoot({
   ...rest
 }: Props) {
   const photoshoot = getFragmentData(Photoshoot_photoshoot, rest.photoshoot);
+ 
 
   return (
-    <div className="relative" style={{ counterIncrement: 'photoshoot-counter' }}>
-      <div className="">
+    <div className="relative delay-100 transition-transform md:hover:scale-105 rounded-3xl border shadow-lg border-black/40 overflow-hidden " >
+   
         <DatoImage
-          pictureClassName="w-1/3 h-auto rounded-3xl "
+          pictureClassName=" overflow-hidden "
           layout="responsive"
           fragment={photoshoot.coverImage.responsiveImage}
           sizes={`100vw, (min-width: 600px) ${(photoshoot.coverImage.responsiveImage.width /
@@ -36,8 +38,7 @@ export function Photoshoot({
             100
             }vh`}
         />
-      </div>
-     
+
     </div>
   );
 }

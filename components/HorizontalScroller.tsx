@@ -8,9 +8,7 @@ export function HorizontalScroller({ children }: { children: ReactNode }) {
 
   return (
     <div
-      className="flex flex-col md:flex-row gap-16"
-   
-    >
+      className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 ">
       {children}
     </div>
   );
