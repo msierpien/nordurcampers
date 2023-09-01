@@ -382,6 +382,7 @@ export type HomepageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
   description: HomepageModelDescriptionField;
+  gallery: Array<PhotoshootRecord>;
   hero?: Maybe<FileField>;
   heroText?: Maybe<Scalars['String']>;
   id: Scalars['ItemId'];

@@ -30,6 +30,7 @@ export default graphql(/* GraphQL */ `
       description {
         value
       }
+    
     }
 
     photoshoots: allPhotoshoots(orderBy: position_ASC) {

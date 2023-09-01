@@ -29,9 +29,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 
-export default async function Home(props: {}) {
+export default async function Home() {
   const {
     homepage,
+    photoshoots,
     meta: { count },
   } = await getHomepageContent();
 
@@ -51,15 +52,13 @@ export default async function Home(props: {}) {
         <div className="">
           <div className='flex flex-col rounded-t-3xl overflow-hidden  '>
             <div className='relative max-h-screen w-auto overflow-hidden'>
-             
-            
+
+
               <DatoImage
                 pictureClassName="xl:w-auto xl:h-auto "
                 layout="responsive"
                 //@ts-ignore
                 fragment={homepage.hero?.responsiveImage || undefined}
-
-
               />
 
               <DividerBottom />
@@ -72,27 +71,34 @@ export default async function Home(props: {}) {
               <Treeheading title='CAMP' />
               <DividerBottom className='fill-white top-0 rotate-180' />
               <div className="uppercase tracking-widest text-sm mb-12 xl:mb-20">
-              {homepage.title}
-            </div>
-            <h1 className="text-black font-serif mb-12 text-4xl xl:text-8xl tracking-tight">
-              <UnwrapStructuredText
-                data={homepage.tagline.value as StructuredTextDocument}
-              />
-            </h1>
-            <div className="leading-loose prose max-w-none">
-              <StructuredText
-                data={homepage.description.value as StructuredTextDocument}
-              />
-            </div>
+                {homepage.title}
+              </div>
+              <h1 className="text-black font-serif mb-12 text-4xl xl:text-8xl tracking-tight">
+                <UnwrapStructuredText
+                  data={homepage.tagline.value as StructuredTextDocument}
+                />
+              </h1>
+              <div className="leading-loose prose max-w-none">
+                <StructuredText
+                  data={homepage.description.value as StructuredTextDocument}
+                />
+              </div>
               <DividerBottom className='fill-white max-h-[30px] -translate-x-10' />
             </div>
-           
+            <section className='mt-16'>
+              <HorizontalScroller>
+                {photoshoots.map((photoshoot) => (
+                  <div key={photoshoot.id} className=''>
+                    <Photoshoot photoshoot={photoshoot} />
+                  </div>
+                ))}
+              </HorizontalScroller>
+            </section>
+
           </div>
         </div>
 
       )}
-
-
     </main>
   );
 }

@@ -16,33 +16,28 @@ const Photoshoot_photoshoot = graphql(/* GraphQL */ `
 
 type Props = {
   photoshoot: FragmentType<typeof Photoshoot_photoshoot>,
-  total: number,
+
 }
 
 export function Photoshoot({
-  total,
   ...rest
 }: Props) {
   const photoshoot = getFragmentData(Photoshoot_photoshoot, rest.photoshoot);
 
   return (
     <div className="relative" style={{ counterIncrement: 'photoshoot-counter' }}>
-      <div className="xl:px-10">
+      <div className="">
         <DatoImage
-          pictureClassName="xl:w-auto xl:h-screen"
+          pictureClassName="w-1/3 h-auto rounded-3xl "
           layout="responsive"
           fragment={photoshoot.coverImage.responsiveImage}
-          sizes={`100vw, (min-width: 1024px) ${(photoshoot.coverImage.responsiveImage.width /
+          sizes={`100vw, (min-width: 600px) ${(photoshoot.coverImage.responsiveImage.width /
             photoshoot.coverImage.responsiveImage.height) *
             100
             }vh`}
         />
       </div>
-      <div className="hidden xl:flex absolute z-10 bottom-[250px] left-0 -rotate-90 origin-top-left items-center text-black">
-        <div className="before:content-[counter(photoshoot-counter)]" />
-        <div className="h-[2px] w-[100px] mx-2 bg-black" />
-        <div>{total}</div>
-      </div>
+     
     </div>
   );
 }
