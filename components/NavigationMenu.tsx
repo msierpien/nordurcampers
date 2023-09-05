@@ -63,7 +63,7 @@ export function NavigationMenu({ phoneNumber }: {
                     {({ active = pathname === item.href }) => (
                       <>
                       <Link href={item.href} className={`text-xl p-1.5 ${active ? 'text-blue' : 'text-black'}`}>{item.label}   <p>{active}</p></Link>
-                      {console.log(`${active} ${item.href} ${pathname}`)}
+                
                       </>
                    
                     )}

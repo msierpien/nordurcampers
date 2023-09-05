@@ -19,7 +19,7 @@ function ReservationForm() {
     const { handleSubmit, control, formState: { errors } } = useForm<FormData>();
 
     const onSubmit = (data: FormData) => {
-        console.log(data);
+
         alert(JSON.stringify(data)); // Dodałem tę linię
     };
 
