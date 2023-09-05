@@ -5,7 +5,7 @@ const Reservation = () => {
 
     return (
         <section className='w-full'>
-            <div className='overflow-x-hidden relative'>
+            <div className='relative'>
                 <div className="flex justify-center items-center m-10">
                     <ReservationForm />
                 </div>
